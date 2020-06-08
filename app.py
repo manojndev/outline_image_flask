@@ -18,7 +18,13 @@ def upload():
 def upload_file():
 
     if request.method == 'POST':
+        print("this is working")
+        username = request.args.get('x')
+        print(username)
         file1 = request.files['file1']
+        
+        
+
         file1.save('./images/' + time_str + '_flask.jpg')
         image = cv2.imread('./images/' + time_str + '_flask.jpg')
         oriImage = image.copy()
